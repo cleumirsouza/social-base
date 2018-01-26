@@ -17,6 +17,12 @@ export class GitApiService{
       .map(data => data.json());
   }
 
+  
+  getRepos(){
+    return this._http.get('https://api.github.com/users/'+this.username+'/repos')
+      .map(data => data.json());
+  }
+
     // getRepos(){
     //     return this._http.get('https://api.github.com/users/'+this.username+'/repos?client_id='+this.client_id+'&client_secret='+this.client_secret)
     //         .map(res => res.json());

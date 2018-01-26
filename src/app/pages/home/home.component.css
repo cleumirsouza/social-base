@@ -1,0 +1,45 @@
+
+.profile-card {
+  margin-top: 2%;
+  margin-left: 15%;
+  width: 65%;
+}
+
+.profile-header {
+  font-size: 20px;
+  margin-bottom: 2%;
+}
+
+.profile-header .title {
+  font-size: 26px;
+  color: rgb(62, 62, 62);
+  font-weight: 550;
+}
+
+.profile-header-avatar {
+  width: 75px;
+  height: 75px;
+}
+
+/* Structure table*/
+.example-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+}
+
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+  

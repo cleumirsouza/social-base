@@ -27,7 +27,7 @@ import { HeaderComponent } from './pages/shared/components/header/header.compone
     MatTableModule,
     MatIconModule, 
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
