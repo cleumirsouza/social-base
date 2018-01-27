@@ -1,3 +1,13 @@
+.search-section {
+  margin-top: 2%;
+  margin-left: 25%;
+  width: 48%;
+}
+
+.form-field {
+  font-size: 28px !important;
+  text-align: center;
+}
 
 .profile-card {
   margin-top: 2%;
@@ -22,19 +32,19 @@
 }
 
 /* Structure table*/
-.example-container {
+.card-container {
   display: flex;
   flex-direction: column;
   min-width: 300px;
 }
 
-.example-header {
+.input-filter {
   min-height: 64px;
   padding: 8px 24px 0;
 }
 
 .mat-form-field {
-  font-size: 14px;
+  font-size: 24px;
   width: 100%;
 }
 

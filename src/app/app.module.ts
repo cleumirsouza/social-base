@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http';
-import { MatButtonModule, MatTableModule, MatToolbarModule, MatIconModule, MatCardModule, MatMenuModule } from '@angular/material';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule, MatTableModule, MatToolbarModule, MatIconModule, MatCardModule, MatMenuModule, MatInputModule, MatPaginatorModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,12 +23,15 @@ import { HeaderComponent } from './pages/shared/components/header/header.compone
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpModule,
+    FormsModule,
     MatButtonModule, 
     MatToolbarModule, 
     MatTableModule,
     MatIconModule, 
     MatCardModule,
     MatMenuModule,
+    MatInputModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

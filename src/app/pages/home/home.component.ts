@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { GitApiService } from "../services/gitapiservice";
 import { HeaderComponent } from "../shared/components/header/header.component";
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, MatPaginator } from '@angular/material';
 
 @Component({
   selector: 'app-home',
@@ -12,33 +12,38 @@ import { MatTableDataSource } from '@angular/material';
 export class HomeComponent implements OnInit {
   user: any;
   imgPath: string;
-  repositories: any;
+  dataSource = new MatTableDataSource();
+  displayedColumns = ['name', 'language', 'forks'];
 
-  displayedColumns = ['repository', 'language', 'forks'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private _gitApiService: GitApiService) {
-    
+  }
+  
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
+  }
+  
+  ngOnInit() {
     this._gitApiService.getUser().subscribe(data => {
       this.user = data;
       this.imgPath = data.avatar_url;
     });
     
-    this._gitApiService.getUser().subscribe(data => {
-      this.repositories = data;
+    this._gitApiService.getRepos().subscribe(data => {
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.paginator = this.paginator;
     });
   }
-
-  ngOnInit() {
+  
+  /**
+   * Set the paginator after the view init since this component will
+   * be able to query its view for the initialized paginator.
+   */
+  ngAfterViewInit() {
   }
-}
 
-export interface Element {
-  repository: string;
-  language: string;
-  forks: number;
-}
 
-const ELEMENT_DATA: Element[] = [
-  {repository: 'Hydrogen', language: 'JavaScript', forks: 34345},
-];
+}
