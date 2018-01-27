@@ -5,14 +5,27 @@
 }
 
 .form-field {
-  font-size: 28px !important;
+  font-size: 20px !important;
   text-align: center;
+}
+
+/* mobile first */
+@media (max-width: 600px) {
+/* Styles */
+  .profile-card {
+    margin-left: 1% !important;
+    width: 90% !important; 
+  }
+  
+  .profile-header .title {
+    font-size: 18px !important;
+  }
 }
 
 .profile-card {
   margin-top: 2%;
-  margin-left: 15%;
-  width: 65%;
+  margin-left: 13%;
+  width: 70%;
 }
 
 .profile-header {
@@ -35,7 +48,7 @@
 .card-container {
   display: flex;
   flex-direction: column;
-  min-width: 300px;
+  /* min-width: 300px; */
 }
 
 .input-filter {
@@ -52,4 +65,5 @@
   overflow: auto;
   max-height: 500px;
 }
+
   
