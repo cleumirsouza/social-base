@@ -37,7 +37,7 @@ export class FilterRepositoryComponent implements OnInit {
   }
 
   ngOnInit() {
-    
+    this.reposNoResult = true;
   }
 
   applyFilter(filterValue: string) {

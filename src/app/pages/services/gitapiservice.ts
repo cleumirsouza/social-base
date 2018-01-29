@@ -13,32 +13,24 @@ export class GitApiService{
   constructor(private _http:Http){}
   
   getUser(){
-    return this._http.get(`https://api.github.com/users/${this.username}`)
+    let url = `https://api.github.com/users/${this.username}?client_id=${this.client_id}&client_secret=${this.client_secret}`;
+    return this._http.get(url)
       .map(data => data.json());
   }
 
   getRepos(){
-    return this._http.get(`https://api.github.com/users/${this.username}/repos`)
+    let url = `https://api.github.com/users/${this.username}/repos?client_id=${this.client_id}&client_secret=${this.client_secret}`;
+    return this._http.get(url)
       .map((data) => {
         return data.json();
       });
   }
 
   getPublicRepos(nameRepo) {
-    return this._http.get(`https://api.github.com/search/repositories?q=${nameRepo}`)
-      .map((data) => {
-        console.log('public', data);
-        
+    let url = `https://api.github.com/search/repositories?q=${nameRepo}`;
+    return this._http.get(url)
+      .map((data) => {  
         return data.json();
       });
   }
-
-  // getRepos(){
-  //     return this._http.get('https://api.github.com/users/'+this.username+'/repos?client_id='+this.client_id+'&client_secret='+this.client_secret)
-  //         .map(res => res.json());
-  // }
-    
-    // updateUsername(username:string){
-    //     this.username = username;
-    // }
 }

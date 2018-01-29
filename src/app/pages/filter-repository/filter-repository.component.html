@@ -2,7 +2,7 @@
 
 <div class="search-section">
   <mat-form-field class="search-full-width">
-    <input matInput type="text" placeholder="repository name"  [(ngModel)]="value" (keyup.enter)="onSearch($event)"/>
+    <input matInput type="text" placeholder="Search Public Repository"  [(ngModel)]="value" (keyup.enter)="onSearch($event)"/>
     <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''; panelOpenState = false">
       <mat-icon>close</mat-icon>
     </button>
@@ -23,7 +23,7 @@
       </div>
       <div *ngIf="!reposNoResult">
         <div class="input-filter">
-          <mat-form-field>
+          <mat-form-field >
             <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Find Project">
           </mat-form-field>
         </div>

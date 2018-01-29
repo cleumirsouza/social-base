@@ -20,30 +20,26 @@ export class HomeComponent implements OnInit {
   constructor(private _gitApiService: GitApiService) {
   }
   
-  applyFilter(filterValue: string) {
-    filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
-    this.dataSource.filter = filterValue;
-  }
-  
   ngOnInit() {
+    this.getProfileAndRepoUser();
+  }
+
+  getProfileAndRepoUser() {
     this._gitApiService.getUser().subscribe(data => {
       this.user = data;
       this.imgPath = data.avatar_url;
     });
-
+    
     this._gitApiService.getRepos().subscribe(data => {
+      console.log(data);
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     });
   }
   
-  /**
-   * Set the paginator after the view init since this component will
-   * be able to query its view for the initialized paginator.
-   */
-  ngAfterViewInit() {
+  applyFilter(filterValue: string) {
+    filterValue = filterValue.trim(); // Remove whitespace
+    filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+    this.dataSource.filter = filterValue;
   }
-
-
 }
