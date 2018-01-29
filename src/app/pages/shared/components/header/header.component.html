@@ -6,11 +6,13 @@
         <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu" xPosition="before" >
-      <button mat-menu-item>
-        <mat-icon>input</mat-icon>
-        <span>Filter Repositories</span>
+      <button mat-menu-item routerLink="/filter">
+        <!-- <a > -->
+          <mat-icon>input</mat-icon>
+          <span>Filter Repositories</span>
+        <!-- </a> -->
       </button>
-      <button mat-menu-item>
+      <button mat-menu-item (click)="onBack()">
         <mat-icon>backspace</mat-icon>
         <span>Logout</span>
       </button>

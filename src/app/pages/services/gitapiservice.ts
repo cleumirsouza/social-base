@@ -9,27 +9,28 @@ export class GitApiService{
   private username = 'cleumirsouza';
   private client_id = '59f2328c57ac6ab80b1d';
   private client_secret='1cab2a80ad2ece6c95c5787d6f7f158854ae9d12';
-  private repoName = 'file-choose';
 
-  constructor(private _http:Http){
-    console.log('service: Github Service Init...');
-  }
+  constructor(private _http:Http){}
   
   getUser(){
     return this._http.get(`https://api.github.com/users/${this.username}`)
       .map(data => data.json());
   }
 
-  
   getRepos(){
-    return this._http.get('https://api.github.com/users/'+this.username+'/repos')
+    return this._http.get(`https://api.github.com/users/${this.username}/repos`)
       .map((data) => {
         return data.json();
       });
   }
 
-  getPublicRepos() {
-    return this._http.get('https://api.github.com/search/repositories?q=file-choose')
+  getPublicRepos(nameRepo) {
+    return this._http.get(`https://api.github.com/search/repositories?q=${nameRepo}`)
+      .map((data) => {
+        console.log('public', data);
+        
+        return data.json();
+      });
   }
 
   // getRepos(){

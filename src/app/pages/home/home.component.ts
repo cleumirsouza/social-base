@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
       this.user = data;
       this.imgPath = data.avatar_url;
     });
-    
+
     this._gitApiService.getRepos().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;

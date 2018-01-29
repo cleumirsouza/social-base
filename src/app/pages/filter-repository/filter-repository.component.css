@@ -1,0 +1,17 @@
+.search-section {
+  margin-top: 2%;
+  margin-left: 16%;
+  font-size: 1.3rem;
+}
+
+.search-full-width {
+  width: 50%;
+  text-align: center;
+  margin-right: 4%;
+}
+
+.empty-search {
+  padding: 2%;
+  color: darkgray;
+  text-align: center;
+}
