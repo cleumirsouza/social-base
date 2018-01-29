@@ -10,12 +10,12 @@ import { NgModel } from '@angular/forms/src/directives/ng_model';
   providers: [GitApiService]
 })
 export class FilterRepositoryComponent implements OnInit {
-  @ViewChild(MatPaginator) paginator: MatPaginator;
   panelOpenState: boolean = false;
   reposNoResult: boolean = false;
+  value: string = '';
   dataSource = new MatTableDataSource();
   displayedColumns = ['owner', 'name', 'language', 'forks'];
-  value = '';
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor( private _gitApiService: GitApiService ) { 
   }
@@ -24,7 +24,6 @@ export class FilterRepositoryComponent implements OnInit {
     this.panelOpenState = false;
     this._gitApiService.getPublicRepos(this.value).subscribe(data => {
       if (data.items.length) {
-        console.log(data.items);
         this.reposNoResult = false;
         this.dataSource = new MatTableDataSource(data.items);
         this.dataSource.paginator = this.paginator;

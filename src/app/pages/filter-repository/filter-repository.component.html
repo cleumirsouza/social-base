@@ -23,7 +23,7 @@
       </div>
       <div *ngIf="!reposNoResult">
         <div class="input-filter">
-          <mat-form-field >
+          <mat-form-field class="input-table-search">
             <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Find Project">
           </mat-form-field>
         </div>

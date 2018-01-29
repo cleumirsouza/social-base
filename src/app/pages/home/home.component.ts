@@ -31,7 +31,6 @@ export class HomeComponent implements OnInit {
     });
     
     this._gitApiService.getRepos().subscribe(data => {
-      console.log(data);
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     });

@@ -27,7 +27,7 @@ export class GitApiService{
   }
 
   getPublicRepos(nameRepo) {
-    let url = `https://api.github.com/search/repositories?q=${nameRepo}`;
+    let url = `https://api.github.com/search/repositories?client_id=${this.client_id}&client_secret=${this.client_secret}&q=${nameRepo}`;
     return this._http.get(url)
       .map((data) => {  
         return data.json();

@@ -20,3 +20,15 @@
   min-height: 64px;
   padding: 8px 24px 0;
 }
+
+.input-table-search {
+  width: 50%;
+  font-size: 12px;
+  text-align: center;
+  margin-left: 25%;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
