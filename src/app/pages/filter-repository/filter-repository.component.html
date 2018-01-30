@@ -2,12 +2,12 @@
 
 <div class="search-section">
   <mat-form-field class="search-full-width">
-    <input matInput type="text" placeholder="Search Public Repository"  [(ngModel)]="value" (keyup.enter)="onSearch($event)"/>
+    <input matInput type="text" placeholder="Search Public Repository"  [(ngModel)]="value" (keyup.enter)="onSearch()"/>
     <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''; panelOpenState = false">
       <mat-icon>close</mat-icon>
     </button>
   </mat-form-field>
-  <button mat-raised-button color="primary" (click)="onSearch(event)">Search</button>
+  <button mat-raised-button color="primary" (click)="onSearch()">Search</button>
 </div>
 
 <mat-accordion>
