@@ -5,3 +5,16 @@
 .menu-position {
   padding: 0 14px;
 }
+
+@media (max-width: 600px) {
+  .mat-toolbar-single-row {
+    height: 40px;
+    font-size: 16px;
+    margin-bottom: 2%;
+  }
+
+  .mat-menu-item {
+    font-size: 12px;
+    padding: 0 7px;
+  }
+}

@@ -28,7 +28,7 @@
           </mat-form-field>
         </div>
         <mat-table #table [dataSource]="dataSource">
-          <ng-container matColumnDef="owner">
+          <ng-container matColumnDef="owner" class="font-table-mobile">
               <mat-header-cell *matHeaderCellDef> Owner </mat-header-cell>
               <mat-cell *matCellDef="let element"> <h4> <a href="{{element.owner.html_url}}" target="_blank"> {{element.owner.login}} </a></h4></mat-cell>
             </ng-container>

@@ -1,3 +1,15 @@
+/* mobile style */
+@media (max-width: 600px) {
+  .search-section {
+    margin-top: 2% !important;
+    margin-left: 12% !important;
+    font-size: 13px !important;
+  }
+
+  .font-table-mobile {
+    font-size: 10px;
+  }
+}
 .search-section {
   margin-top: 2%;
   margin-left: 16%;
@@ -31,4 +43,9 @@
 .mat-table {
   overflow: auto;
   max-height: 500px;
+}
+
+.card-container {
+  margin-left: -16px;
+  margin-right: -16px;
 }

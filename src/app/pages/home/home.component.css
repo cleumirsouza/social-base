@@ -9,23 +9,20 @@
   text-align: center;
 }
 
-/* mobile first */
+/* mobile style */
 @media (max-width: 600px) {
-/* Styles */
   .profile-card {
     margin-left: 1% !important;
     width: 90% !important; 
   }
   
   .profile-header .title {
-    font-size: 18px !important;
+    font-size: 14px !important;
   }
 }
 
 .profile-card {
   margin-top: 2%;
-  margin-left: 13%;
-  width: 70%;
 }
 
 .profile-header {
@@ -34,7 +31,7 @@
 }
 
 .profile-header .title {
-  font-size: 26px;
+  font-size: 18px;
   color: rgb(62, 62, 62);
   font-weight: 550;
 }
@@ -48,12 +45,18 @@
 .card-container {
   display: flex;
   flex-direction: column;
-  /* min-width: 300px; */
+}
+
+.card-content {
+  margin-left: -16px;
+  margin-right: -16px;
 }
 
 .mat-form-field {
-  font-size: 24px;
-  width: 100%;
+  font-size: 16px;
+  width: 80%;
+  text-align: center;
+  margin-left: 10%;
 }
 
 .mat-table {
