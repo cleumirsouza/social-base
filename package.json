@@ -4,9 +4,9 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "deploy": "ng build --prod --base-href https://cleumirsouza.github.io/social-base/ && ./node_modules/.bin/gh-pages -d dist",
+    "deploy": "ng build --prod --base-href https://cleumirsouza.github.io/social-base/ && gh-pages -d dist",
     "start": "ng serve",
-    "build": "ng build --prod",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

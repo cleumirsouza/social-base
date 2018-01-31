@@ -1,30 +1,41 @@
 
 # SbApp
 
-This project was created to get profile and public repos from GitHub.
+This project was created to get profile and repositories from an especific user and public repositories from  GitHub. 
+
+This application has tow pages:
+
+Home - Get profile from cleumirsouza and repositories.
+Filter - This page have an input to search all public repositories filterred by string.
+
+The application was published at [Social Base - Test](https://cleumirsouza.github.io/social-base/).
 
 ## Setup
-requided: Git and NPM.
 
-step1: Clone the project [ git clone url ]
+Requided: Git and NPM.
 
-step2: npm i
+step1: Clone the project
+    Run `git git@github.com:cleumirsouza/social-base.git`
+
+step2: Install dependences from project, you can use npm or yarn
+    Run `npm install`
 
 ## Development server
 
-Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+For a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+    Run `npm start` 
 
 ## Build
+To build the project. The build artifacts will be stored in the `dist/` directory.
+    Run `ng build` 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Build and publish
+To build the project and publish in the GitHub Pages.
+    Run `npm run deploy` 
 
 ## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+To execute the unit tests via [Karma](https://karma-runner.github.io). Test made only to check app, route, service and header component 
+    Run `ng test` 
 
 
 -- setup
