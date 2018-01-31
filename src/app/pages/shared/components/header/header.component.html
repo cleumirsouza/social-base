@@ -6,13 +6,13 @@
         <mat-icon>more_vert</mat-icon>
     </button>
     <mat-menu #menu="matMenu" xPosition="before" >
-      <button mat-menu-item routerLink="/filter">
+      <button mat-menu-item *ngIf="isHome" routerLink="/filter">
         <!-- <a > -->
           <mat-icon>input</mat-icon>
           <span>Filter Repositories</span>
         <!-- </a> -->
       </button>
-      <button mat-menu-item (click)="onBack($event)">
+      <button mat-menu-item *ngIf="!isHome" routerLink="/home">
         <mat-icon>home</mat-icon>
         <span>home</span>
       </button>

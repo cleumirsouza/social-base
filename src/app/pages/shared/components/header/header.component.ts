@@ -8,17 +8,14 @@ import { Location } from '@angular/common';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  isHome: boolean;
   constructor(private _location: Location) { }
 
   ngOnInit() {
-  }
-
-  onFilter() {
-    this._location.go('/filter');
-  }
-
-  onBack(event) {
-    this._location.back();
+    /*
+      Description:
+        flag to enable and disable route between pages
+    */
+    this.isHome  = this._location.path() !== '/filter' ? true : false;
   }
 }

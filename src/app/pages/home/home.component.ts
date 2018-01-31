@@ -23,7 +23,11 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.getProfileAndRepoUser();
   }
-
+  
+  /*
+    Description:
+      Method to fill card profile and get repositories from user.
+  */
   getProfileAndRepoUser() {
     this._gitApiService.getUser().subscribe(data => {
       this.user = data;
@@ -36,6 +40,11 @@ export class HomeComponent implements OnInit {
     });
   }
   
+  
+  /*
+    Description:
+      Method to search string from table
+  */
   applyFilter(filterValue: string) {
     filterValue = filterValue.trim(); // Remove whitespace
     filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches

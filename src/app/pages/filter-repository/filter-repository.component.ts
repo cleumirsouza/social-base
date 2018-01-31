@@ -20,6 +20,10 @@ export class FilterRepositoryComponent implements OnInit {
   constructor( private _gitApiService: GitApiService ) { 
   }
   
+  /*
+    Description:
+      Method to get public repositories by string from textbox and fill table.
+  */
   onSearch() {
     this.panelOpenState = false;
     this._gitApiService.getPublicRepos(this.value).subscribe(data => {
@@ -39,9 +43,13 @@ export class FilterRepositoryComponent implements OnInit {
     this.reposNoResult = true;
   }
 
+  /*
+    Description:
+      Method to filter data on the table.
+  */
   applyFilter(filterValue: string) {
-    filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+    filterValue = filterValue.trim();
+    filterValue = filterValue.toLowerCase();
     this.dataSource.filter = filterValue;
   }
 }
